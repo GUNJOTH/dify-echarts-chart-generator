@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ECharts chart generator">
+  <rect width="128" height="128" rx="24" fill="#1677ff"/>
+  <path d="M27 96V35m0 61h78M42 82l18-20 16 11 25-31" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+  <circle cx="42" cy="82" r="6" fill="#ffc53d"/><circle cx="60" cy="62" r="6" fill="#ffc53d"/><circle cx="76" cy="73" r="6" fill="#ffc53d"/><circle cx="101" cy="42" r="6" fill="#ffc53d"/>
+</svg>

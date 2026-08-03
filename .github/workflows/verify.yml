@@ -1,0 +1,24 @@
+name: verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.11.29"
+          enable-cache: true
+      - name: Synchronize locked environment
+        run: uv sync --frozen
+      - name: Test chart generator
+        run: uv run python -m unittest discover -s tests -v

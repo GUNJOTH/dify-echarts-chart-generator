@@ -1,0 +1,94 @@
+identity:
+  author: tonghai
+  name: generate_chart
+  label:
+    en_US: Generate ECharts chart
+    zh_Hans: 生成 ECharts 图表
+description:
+  human:
+    en_US: Turns structured business data into a ready-to-render Apache ECharts option JSON.
+    zh_Hans: 将结构化业务数据转换为可直接渲染的 Apache ECharts 配置 JSON。
+  llm: >-
+    Generate a valid Apache ECharts option from supplied JSON data. Use bar or line
+    when categories share one or more numeric series; use pie for named proportions;
+    use scatter for [x,y] points. The result is a JSON option suitable for echarts.setOption().
+parameters:
+  - name: chart_type
+    type: select
+    required: true
+    default: bar
+    options:
+      - value: bar
+        label: {en_US: Bar, zh_Hans: 柱状图}
+      - value: line
+        label: {en_US: Line, zh_Hans: 折线图}
+      - value: pie
+        label: {en_US: Pie, zh_Hans: 饼图}
+      - value: scatter
+        label: {en_US: Scatter, zh_Hans: 散点图}
+    form: llm
+    label: {en_US: Chart type, zh_Hans: 图表类型}
+    human_description: {en_US: Select a chart type., zh_Hans: 选择图表类型。}
+    llm_description: One of bar, line, pie, scatter.
+  - name: title
+    type: string
+    required: false
+    form: llm
+    label: {en_US: Title, zh_Hans: 标题}
+    human_description: {en_US: Chart title., zh_Hans: 图表标题。}
+    llm_description: A concise chart title.
+  - name: chart_data
+    type: string
+    required: true
+    form: llm
+    label: {en_US: Chart data JSON, zh_Hans: 图表数据 JSON}
+    human_description: {en_US: JSON input; see plugin README for examples., zh_Hans: JSON 输入，格式示例见插件 README。}
+    llm_description: >-
+      JSON object. Bar/line: {"categories":["Jan","Feb"],"series":[{"name":"Sales","data":[10,20]}]}.
+      Pie: {"series":[{"name":"Share","data":[{"name":"A","value":10}]}]}.
+      Scatter: {"series":[{"name":"Points","data":[[1,2],[3,4]]}]}.
+  - name: theme
+    type: select
+    required: false
+    default: default
+    options:
+      - value: default
+        label: {en_US: Default, zh_Hans: 默认}
+      - value: business
+        label: {en_US: Business, zh_Hans: 商务蓝}
+      - value: dark
+        label: {en_US: Dark, zh_Hans: 深色}
+    form: form
+    label: {en_US: Theme, zh_Hans: 配色}
+    human_description: {en_US: Chart color palette., zh_Hans: 图表配色方案。}
+  - name: show_legend
+    type: boolean
+    required: false
+    default: true
+    form: form
+    label: {en_US: Show legend, zh_Hans: 显示图例}
+    human_description: {en_US: Show the series legend., zh_Hans: 显示系列图例。}
+  - name: show_toolbox
+    type: boolean
+    required: false
+    default: true
+    form: form
+    label: {en_US: Show toolbox, zh_Hans: 显示工具箱}
+    human_description: {en_US: Include export, restore, and data-view controls., zh_Hans: 包含导出、还原和数据视图控件。}
+  - name: output_format
+    type: select
+    required: false
+    default: option_json
+    options:
+      - value: option_json
+        label: {en_US: Option JSON, zh_Hans: 配置 JSON}
+      - value: html
+        label: {en_US: Standalone HTML, zh_Hans: 独立 HTML}
+      - value: both
+        label: {en_US: Both, zh_Hans: 两者}
+    form: form
+    label: {en_US: Output format, zh_Hans: 输出格式}
+    human_description: {en_US: Return ECharts option JSON, standalone HTML, or both., zh_Hans: 返回 ECharts 配置 JSON、独立 HTML 或两者。}
+extra:
+  python:
+    source: tools/generate_chart.py

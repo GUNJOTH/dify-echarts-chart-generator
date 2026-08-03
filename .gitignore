@@ -1,0 +1,7 @@
+.venv/
+.uv-cache/
+.env
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.difypkg

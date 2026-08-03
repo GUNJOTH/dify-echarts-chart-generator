@@ -1,0 +1,18 @@
+identity:
+  author: tonghai
+  name: echarts_chart_generator
+  label:
+    en_US: ECharts Chart Generator
+    zh_Hans: ECharts 图表生成器
+  description:
+    en_US: Create ECharts option JSON and optional standalone HTML from business data.
+    zh_Hans: 根据业务数据生成 ECharts 配置 JSON，并可选生成独立 HTML。
+  icon: icon.svg
+  tags:
+    - design
+    - utilities
+tools:
+  - tools/generate_chart.yaml
+extra:
+  python:
+    source: provider/echarts_chart_generator.py
