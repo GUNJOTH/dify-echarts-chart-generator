@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Dify Tool plugin that generates Apache ECharts options"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-  "dify_plugin>=0.2.0,<0.7.0",
+  "dify_plugin>=0.2.0,<0.11.0",
 ]
 
 [tool.uv]
