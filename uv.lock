@@ -108,7 +108,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "dify-plugin", specifier = ">=0.2.0,<0.7.0" }]
+requires-dist = [{ name = "dify-plugin", specifier = ">=0.2.0,<0.11.0" }]
 
 [[package]]
 name = "dify-plugin"
