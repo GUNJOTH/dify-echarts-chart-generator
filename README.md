@@ -55,3 +55,10 @@ dify plugin package .
 ```
 
 Then upload the generated `.difypkg` under **Plugins → Install from local package** in Dify.
+
+## 项目治理入口
+
+- [治理约定](./GOVERNANCE.md)
+- [贡献指南](./CONTRIBUTING.md)
+- [安全策略](./SECURITY.md)
+- Issue 与 Pull Request 请使用仓库模板，并记录实际验证证据。
